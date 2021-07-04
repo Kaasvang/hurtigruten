@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{9DFC3066-31E8-4483-A3EA-421E68B5CD14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1.Tests", "ConsoleApplication1.Tests\ConsoleApplication1.Tests.csproj", "{7941A9D5-51E1-4738-BC3B-42F5F43BBE79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{9DFC3066-31E8-4483-A3EA-421E68B5CD14}.Debug|x86.Build.0 = Debug|x86
 		{9DFC3066-31E8-4483-A3EA-421E68B5CD14}.Release|x86.ActiveCfg = Release|x86
 		{9DFC3066-31E8-4483-A3EA-421E68B5CD14}.Release|x86.Build.0 = Release|x86
+		{7941A9D5-51E1-4738-BC3B-42F5F43BBE79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7941A9D5-51E1-4738-BC3B-42F5F43BBE79}.Debug|x86.Build.0 = Debug|Any CPU
+		{7941A9D5-51E1-4738-BC3B-42F5F43BBE79}.Release|x86.ActiveCfg = Release|Any CPU
+		{7941A9D5-51E1-4738-BC3B-42F5F43BBE79}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

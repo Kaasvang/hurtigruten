@@ -90,7 +90,7 @@ namespace ConsoleApplication1
             _money.WithdrawAll();
         }
 
-        private void SmsOrder(Soda product)
+        public void SmsOrder(Soda product)
         {
             if (product.Nr > 0)
             {
@@ -99,7 +99,7 @@ namespace ConsoleApplication1
             }
         }
 
-        private void Order(Soda product)
+        public void Order(Soda product)
         {
             // split string on space
             if (_money.Balance >= product.Price && product.Nr > 0)
@@ -141,7 +141,7 @@ namespace ConsoleApplication1
             Console.WriteLine("-------\n\n");
         }
 
-        private Soda GetProduct(string productName)
+        public Soda GetProduct(string productName)
         {
             return (
                 from prod in _inventory.Get()
