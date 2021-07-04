@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ConsoleApplication1.Inventory;
 using ConsoleApplication1.Models;
 
 namespace ConsoleApplication1
@@ -9,12 +10,17 @@ namespace ConsoleApplication1
         private static double _money;
         
         private static bool _running = true;
-        private static readonly Soda[] Inventory = 
+        private static IInventoryProvider _inventory;
+
+        public SodaMachine(IInventoryProvider inventory)
         {
-            new Soda {Name = "coke", Nr = 5, Price = 20.0},
-            new Soda {Name = "sprite", Nr = 3, Price = 15.0},
-            new Soda {Name = "fanta", Nr = 3, Price = 15.0}
-        };
+            _inventory = inventory;
+        }
+
+        public SodaMachine() : this(new InventoryProvider())
+        {
+            
+        }
 
         /// <summary>
         /// This is the starter method for the machine
@@ -135,7 +141,7 @@ namespace ConsoleApplication1
         private Soda GetProduct(string productName)
         {
             return (
-                from prod in Inventory
+                from prod in _inventory.Get()
                 where prod.Name == productName
                 select prod)
                 .FirstOrDefault();
