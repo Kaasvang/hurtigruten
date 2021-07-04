@@ -4,5 +4,6 @@ namespace ConsoleApplication1.Models
     {
         public string Name { get; set; }
         public int Nr { get; set; }
+        public double Price { get; set; }
     }
 }
