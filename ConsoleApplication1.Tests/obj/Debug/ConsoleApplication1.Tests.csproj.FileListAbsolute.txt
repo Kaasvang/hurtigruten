@@ -1,0 +1,11 @@
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/ConsoleApplication1.Tests.dll
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/ConsoleApplication1.Tests.pdb
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/nunit.framework.dll
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/nunit.framework.xml
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/obj/Debug/ConsoleApplication1.Tests.csprojAssemblyReference.cache
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/obj/Debug/ConsoleApplication1.Tests.csproj.CoreCompileInputs.cache
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/obj/Debug/ConsoleApplication1.Tests.csproj.CopyComplete
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/obj/Debug/ConsoleApplication1.Tests.dll
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/obj/Debug/ConsoleApplication1.Tests.pdb
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/ConsoleApplication1.exe
+/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/bin/Debug/ConsoleApplication1.pdb

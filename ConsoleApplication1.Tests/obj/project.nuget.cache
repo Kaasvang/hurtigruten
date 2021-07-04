@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5iDooVlp3dN1qFqMvwVRP1fzm15yxtYVB1x6hjp7NgmtTOVGnMjGD9R9Pw/KHqK+bok5nCUFQKzEweyaBfsejQ==",
+  "success": true,
+  "projectFilePath": "/Users/kent/fun/kodeoppgave_hurtigruten/ConsoleApplication1/ConsoleApplication1.Tests/ConsoleApplication1.Tests.csproj",
+  "expectedPackageFiles": [
+    "/Users/kent/.nuget/packages/nunit/3.5.0/nunit.3.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
