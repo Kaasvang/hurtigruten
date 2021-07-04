@@ -46,6 +46,7 @@
     <Compile Include="Inventory\IInventoryProvider.cs" />
     <Compile Include="Inventory\InventoryProvider.cs" />
     <Compile Include="Models\Command.cs" />
+    <Compile Include="Models\Money.cs" />
     <Compile Include="Models\Soda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

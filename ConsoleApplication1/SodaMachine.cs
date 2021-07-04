@@ -7,17 +7,18 @@ namespace ConsoleApplication1
 {
     public class SodaMachine
     {
-        private static double _money;
+        private static IInventoryProvider _inventory;
+        private static Money _money;
         
         private static bool _running = true;
-        private static IInventoryProvider _inventory;
 
-        public SodaMachine(IInventoryProvider inventory)
+        public SodaMachine(IInventoryProvider inventory, Money money)
         {
             _inventory = inventory;
+            _money = money;
         }
 
-        public SodaMachine() : this(new InventoryProvider())
+        public SodaMachine() : this(new InventoryProvider(), new Money())
         {
             
         }
@@ -29,7 +30,7 @@ namespace ConsoleApplication1
         {
             while (_running)
             {
-                PrintMenu();
+                DisplayMenu();
 
                 var input = Console.ReadLine();
                 var command = ParseInput(input);
@@ -85,8 +86,8 @@ namespace ConsoleApplication1
         private void Recall()
         {
             //Give money back
-            Console.WriteLine($"Returning {_money} to customer");
-            _money = 0;
+            Console.WriteLine($"Returning {_money.Balance} to customer");
+            _money.WithdrawAll();
         }
 
         private void SmsOrder(Soda product)
@@ -101,12 +102,12 @@ namespace ConsoleApplication1
         private void Order(Soda product)
         {
             // split string on space
-            if (_money >= product.Price && product.Nr > 0)
+            if (_money.Balance >= product.Price && product.Nr > 0)
             {
                 Console.WriteLine($"Giving {product.Name} out");
-                _money -= product.Price;
-                Console.WriteLine("Giving " + _money + " out in change");
-                _money = 0;
+                _money.Withdraw(product.Price);
+                Console.WriteLine("Giving " + _money.Balance + " out in change");
+                _money.WithdrawAll();
                 product.Nr--;
             }
             else if (product.Nr == 0)
@@ -115,19 +116,21 @@ namespace ConsoleApplication1
             }
             else
             {
-                Console.WriteLine("Need " + (product.Price - _money) + " more");
+                Console.WriteLine("Need " + (product.Price - _money.Balance) + " more");
             }
         }
 
         private void Insert(int amount)
         {
             //Add to credit
-            _money += amount;
+            _money.Insert(amount);
             Console.WriteLine($"Adding {amount} to credit");
         }
 
-        private void PrintMenu()
+        // TODO: (coke, sprite, fanta) should not be hardcoded
+        private void DisplayMenu()
         {
+            // TODO: show products command 
             Console.WriteLine("\n\nAvailable commands:");
             Console.WriteLine($"insert (money) - Money put into money slot");
             Console.WriteLine("order (coke, sprite, fanta) - Order from machines buttons");
