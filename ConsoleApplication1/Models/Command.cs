@@ -1,4 +1,4 @@
-namespace ConsoleApplication1.Models
+namespace ConsoleApplication1.Commands
 {
     public class Command
     {
