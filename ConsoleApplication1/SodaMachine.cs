@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConsoleApplication1.Inventory;
 using ConsoleApplication1.Models;
@@ -54,6 +55,9 @@ namespace ConsoleApplication1
                         SmsOrder(product);
                         break;
                     }
+                    case "show":
+                        ShowProducts();
+                        break;
                     case "recall":
                         Recall();
                         break;
@@ -127,20 +131,35 @@ namespace ConsoleApplication1
             Console.WriteLine($"Adding {amount} to credit");
         }
 
-        // TODO: (coke, sprite, fanta) should not be hardcoded
         private void DisplayMenu()
         {
-            // TODO: show products command 
             Console.WriteLine("\n\nAvailable commands:");
             Console.WriteLine($"insert (money) - Money put into money slot");
-            Console.WriteLine("order (coke, sprite, fanta) - Order from machines buttons");
-            Console.WriteLine("sms order (coke, sprite, fanta) - Order sent by sms");
+            Console.WriteLine("order (product) - Order from machines buttons");
+            Console.WriteLine("sms order (product) - Order sent by sms");
             Console.WriteLine("recall - gives money back");
+            Console.WriteLine("show - shows all products");
             Console.WriteLine("-------");
-            Console.WriteLine("Inserted money: " + _money);
+            Console.WriteLine("Inserted money: " + _money.Balance);
             Console.WriteLine("-------\n\n");
         }
 
+        public void ShowProducts()
+        {
+            var products = GetProductNames(); 
+            Console.WriteLine("-------");
+            foreach (var product in products)
+            {
+                Console.WriteLine(product);
+            }
+        }
+
+        public List<string> GetProductNames()
+        {
+            return (from product in _inventory.Get()
+                select product.Name).ToList();
+        }
+        
         public Soda GetProduct(string productName)
         {
             return (
