@@ -35,28 +35,28 @@ namespace ConsoleApplication1
                 var input = Console.ReadLine();
                 var command = ParseInput(input);
 
-                if (command.Name.Equals("insert")) 
+                switch (command.Name)
                 {
-                    Insert(int.Parse(command.Argument));
-                }
-                
-                if (command.Name.Equals("order"))
-                {
-                    var product = GetProduct(command.Argument);
-                    if (product == null) continue;
-                    Order(product);
-                }
-                
-                if (command.Name.Equals("sms order"))
-                {
-                    var product = GetProduct(command.Argument);
-                    if (product == null) continue;
-                    SmsOrder(product);
-                }
-
-                if (command.Name.Equals("recall"))
-                {
-                    Recall();
+                    case "insert":
+                        Insert(int.Parse(command.Argument));
+                        break;
+                    case "order":
+                    {
+                        var product = GetProduct(command.Argument);
+                        if (product == null) continue;
+                        Order(product);
+                        break;
+                    }
+                    case "sms order":
+                    {
+                        var product = GetProduct(command.Argument);
+                        if (product == null) continue;
+                        SmsOrder(product);
+                        break;
+                    }
+                    case "recall":
+                        Recall();
+                        break;
                 }
             }
         }
